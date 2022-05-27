@@ -79,6 +79,22 @@ public class CalculatorTest {
 		assertEquals(expected, actual);
 	}
 	
+	@Test
+	public final void testDivideWith0Denominator() {
+		int a = 1000;
+	    int b = 0;
+	    
+	    try {
+	      Calculator cal = new Calculator();
+	      cal.divide(a, b);
+	      fail("Expected an IllegalArgumentException to be thrown");
+	    }catch (IllegalArgumentException e) {
+	      assertEquals("Division by zero is not allowed", e.getMessage());
+	    }catch (Throwable t) {
+	      assertEquals("Expected an IllegalArgumentException to be thrown", t.getMessage());
+	    }
+	}
+	
 	
 		
 }
