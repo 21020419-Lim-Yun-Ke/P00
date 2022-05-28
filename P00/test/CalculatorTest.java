@@ -89,10 +89,23 @@ public class CalculatorTest {
 	      cal.divide(a, b);
 	      fail("Expected an IllegalArgumentException to be thrown");
 	    }catch (IllegalArgumentException e) {
-	      assertEquals("Division by zero is not allowed", e.getMessage());
+	    	assertEquals("Division by zero is not allowed", e.getMessage());
 	    }catch (Throwable t) {
-	      assertEquals("Expected an IllegalArgumentException to be thrown", t.getMessage());
+	    	assertEquals("Expected an IllegalArgumentException to be thrown", t.getMessage());
 	    }
+	}
+	
+	@Test
+	public void testPower() {
+		//fail("Not yet implemented");
+		int a = 5;
+		int b = 2;
+		
+		Calculator cal = new Calculator();
+		int actual = cal.power(a,b);
+		
+		int expected = 25;
+		assertEquals(expected, actual);
 	}
 	
 	
